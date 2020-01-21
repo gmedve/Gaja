@@ -114,9 +114,10 @@ def main():
     while not done:
         clock.tick(FPS)
 
-        if not frame_clock % msec_to_frames(ovira.INTERVAL):  
+        if frame_clock == 40:
             pp = ovira(images['pipe']) 
             pipes.append(pp)
+            frame_clock=0
 
         for e in pygame.event.get():
             if e.type == QUIT and e.key==K_ESCAPE:   
